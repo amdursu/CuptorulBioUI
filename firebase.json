@@ -1,0 +1,19 @@
+{
+  "hosting": {
+    "public": "out",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "redirects": [
+      {
+        "source": "/api/getStocks",
+        "destination": "https://cuptorul-bio-app.onrender.com/api/getStocks",
+        "type": 301
+      }
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
