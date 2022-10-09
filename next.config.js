@@ -7,7 +7,6 @@ const nextConfig = {
       {
         source: "/",
         destination: "/stocks",
-        permanent: true,
       },
       {
         source: "/api/:path*",
