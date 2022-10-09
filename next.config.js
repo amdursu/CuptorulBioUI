@@ -2,9 +2,13 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  basePath: "/stocks",
   rewrites: async () => {
     return [
+      {
+        source: "/",
+        destination: "/stocks",
+        permanent: true,
+      },
       {
         source: "/api/:path*",
         destination: "https://cuptorul-bio-app.onrender.com/api/:path*",
