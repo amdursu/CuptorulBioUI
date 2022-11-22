@@ -12,6 +12,7 @@ const Table = ({ items, columns, props }: ITable) => {
           value={items}
           responsiveLayout="scroll"
           showGridlines
+          className={styles.myTable}
           {...props}
         >
           {columns.map((column) => {

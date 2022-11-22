@@ -11,6 +11,7 @@ const nextConfig = {
       {
         source: "/api/:path*",
         destination: "https://cuptorul-bio-app.onrender.com/api/:path*",
+        // destination: "http://localhost:3000/api/:path*",
       },
     ];
   },

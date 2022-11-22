@@ -1,0 +1,28 @@
+@import "../../styles/variables.scss";
+
+.modalContent {
+  height: 6rem;
+  width: 60rem;
+  padding: 2rem;
+  font-size: $normal-font-size;
+  text-align: center;
+}
+
+.modalFooter {
+  border-top: 1px solid lightgray;
+  padding-top: 2rem;
+  margin-bottom: 2rem;
+  font-size: $normal-font-size;
+  text-align: center;
+
+  :global {
+    .p-button {
+      font-size: $normal-font-size;
+      width: 10rem;
+    }
+
+    .p-button:last-child {
+      margin-left: 1.2rem;
+    }
+  }
+}

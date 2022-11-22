@@ -1,0 +1,60 @@
+@import "../../styles/variables.scss";
+
+.modalContent {
+  height: 32rem;
+  width: 40rem;
+  padding: 2rem;
+  font-size: $normal-font-size;
+  text-align: center;
+}
+
+.productLabel {
+  margin-top: 0.8rem;
+  margin-right: 1rem;
+  width: 13rem;
+  text-align: end;
+}
+
+.productInput {
+  :global {
+    .p-inputtext {
+      font-size: $normal-font-size;
+    }
+  }
+}
+
+.quantityInput {
+  :global {
+    .p-inputtext {
+      font-size: $normal-font-size;
+      text-align: center;
+      width: 13.4rem;
+    }
+  }
+}
+
+.inputCard {
+  :global {
+    .p-inputtext {
+      font-size: $normal-font-size;
+    }
+  }
+}
+
+.modalFooter {
+  border-top: 1px solid lightgray;
+  padding-top: 2rem;
+  margin-bottom: 2rem;
+  font-size: $normal-font-size;
+  text-align: center;
+
+  :global {
+    .p-button {
+      font-size: $normal-font-size;
+    }
+
+    .p-button:last-child {
+      margin-left: 1.2rem;
+    }
+  }
+}

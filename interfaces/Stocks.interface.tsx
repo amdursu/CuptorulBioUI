@@ -1,7 +1,7 @@
 export interface IStock {
-  productID: Number;
-  productName: String;
-  quantity: Number;
-  weight: Number;
+  productID?: Number;
+  productName: string;
+  productQuantity: string;
+  productWeight: string;
   measureUnit: string;
 }

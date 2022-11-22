@@ -7,7 +7,7 @@ export interface ITable {
 }
 
 export interface IColumn {
-  field: string;
+  field?: string;
   header: string;
   props?: any;
 }

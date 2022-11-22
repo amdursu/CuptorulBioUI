@@ -1,0 +1,55 @@
+@import "../../styles/variables.scss";
+
+.modalContent {
+  height: 40vh;
+  padding: 2rem;
+  font-size: $normal-font-size;
+  text-align: center;
+}
+
+.addStockQuantity {
+  :global {
+    .p-inputtext {
+      font-size: $normal-font-size;
+      text-align: center;
+      width: 15rem;
+    }
+  }
+}
+
+.newQuantity {
+  margin-top: 0.9rem;
+  width: 5rem;
+}
+
+.priceLabel {
+  margin-top: 0.8rem;
+  margin-right: 1rem;
+}
+
+.priceInput {
+  :global {
+    .p-inputtext {
+      font-size: $normal-font-size;
+      width: 14rem;
+    }
+  }
+}
+
+.modalFooter {
+  border-top: 1px solid lightgray;
+  padding-top: 2rem;
+  margin-bottom: 2rem;
+  font-size: $normal-font-size;
+  text-align: center;
+
+  :global {
+    .p-button {
+      font-size: $normal-font-size;
+    }
+
+    .p-button:last-child {
+      margin-left: 1.2rem;
+    }
+  }
+}

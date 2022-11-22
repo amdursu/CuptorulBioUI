@@ -1,3 +1,38 @@
+@import "../../styles/variables.scss";
+
 .container {
   margin-top: 20px;
+
+  :global {
+    .p-button-label {
+      font-size: $normal-font-size;
+    }
+
+    .p-datatable {
+      font-size: $normal-font-size;
+    }
+
+    .p-inputtext {
+      font-size: $normal-font-size;
+      padding-left: 4rem;
+    }
+
+    .p-input-icon-left {
+      font-size: $normal-font-size;
+
+      i {
+        margin-top: -0.8rem;
+        margin-left: 0.5rem;
+      }
+    }
+
+    .p-paginator-pages button {
+      font-size: $normal-font-size;
+    }
+
+    .p-button-rounded {
+      height: 2.5rem !important;
+      width: 2.5rem;
+    }
+  }
 }

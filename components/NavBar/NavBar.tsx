@@ -15,7 +15,7 @@ const NavBar = ({ children }: any) => {
   ];
   return (
     <div className={styles.navbar}>
-      <Menubar model={items} />
+      <Menubar className={styles.menubar} model={items} />
       <main>{children}</main>
     </div>
   );
