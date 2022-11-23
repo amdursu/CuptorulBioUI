@@ -46,7 +46,7 @@ const AddProduct = ({ setModalVisible, newRow, toast }: IAddProduct) => {
     <>
       <div className={styles.modalContent}>
         <div
-          className={`${styles.inputCard} grid shadow-3 p-3 border-round-xl`}
+          className={`${styles.inputCard} flex shadow-3 p-3 border-round-xl`}
         >
           <span className={`${styles.productLabel} font-semibold`}>
             Nume produs:
@@ -54,12 +54,12 @@ const AddProduct = ({ setModalVisible, newRow, toast }: IAddProduct) => {
           <InputText
             value={productName}
             className={styles.productInput}
-            keyfilter="alphanum"
+            keyfilter={/^[\w\-\s]+$/}
             onChange={(e) => setProductName(e.target.value)}
           />
         </div>
         <div
-          className={`${styles.inputCard} mt-5 grid shadow-3 p-3 border-round-xl`}
+          className={`${styles.inputCard} flex mt-5 shadow-3 p-3 border-round-xl`}
         >
           <span className={`${styles.productLabel} font-semibold`}>
             Unitate masura:
@@ -71,7 +71,7 @@ const AddProduct = ({ setModalVisible, newRow, toast }: IAddProduct) => {
             onChange={(e) => setMeasureUnit(e.target.value)}
           />
         </div>
-        <div className="grid mt-5 shadow-3 p-3 border-round-xl">
+        <div className="flex mt-5 shadow-3 p-3 border-round-xl">
           <span className={`${styles.productLabel} font-semibold`}>
             Gramaj:
           </span>
@@ -85,7 +85,7 @@ const AddProduct = ({ setModalVisible, newRow, toast }: IAddProduct) => {
           />
         </div>
         <div
-          className={`${styles.inputCard} mt-5 grid shadow-3 p-3 border-round-xl`}
+          className={`${styles.inputCard} flex mt-5 shadow-3 p-3 border-round-xl`}
         >
           <span className={`${styles.productLabel} font-semibold`}>
             Cantitate:

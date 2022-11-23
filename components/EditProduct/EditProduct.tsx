@@ -40,7 +40,7 @@ const EditProduct = ({ setModalVisible, data, toast }: IEditProduct) => {
     <>
       <div className={styles.modalContent}>
         <div
-          className={`${styles.inputCard} grid shadow-3 p-3 border-round-xl`}
+          className={`${styles.inputCard} flex shadow-3 p-3 border-round-xl`}
         >
           <span className={`${styles.productLabel} font-semibold`}>
             Nume produs:
@@ -52,7 +52,7 @@ const EditProduct = ({ setModalVisible, data, toast }: IEditProduct) => {
             onChange={(e) => setProductName(e.target.value)}
           />
         </div>
-        <div className="grid mt-5 shadow-3 p-3 border-round-xl">
+        <div className="flex mt-5 shadow-3 p-3 border-round-xl">
           <span className={`${styles.productLabel} font-semibold`}>
             Gramaj:
           </span>
@@ -66,7 +66,7 @@ const EditProduct = ({ setModalVisible, data, toast }: IEditProduct) => {
           />
         </div>
         <div
-          className={`${styles.inputCard} mt-5 grid shadow-3 p-3 border-round-xl`}
+          className={`${styles.inputCard} flex mt-5 shadow-3 p-3 border-round-xl`}
         >
           <span className={`${styles.productLabel} font-semibold`}>
             Unitate masura:

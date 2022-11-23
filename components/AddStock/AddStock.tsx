@@ -2,6 +2,7 @@ import { Button } from "primereact/button";
 import { InputNumber } from "primereact/inputnumber";
 import { useEffect, useState } from "react";
 import DataService from "../../services/data.service";
+import useWindowDimensions from "../../utils/getWindowDimensions";
 import toastOptions from "../../utils/toastOptions";
 import { IAddStock } from "./AddStock.interface";
 import styles from "./AddStock.module.scss";
@@ -10,6 +11,8 @@ const AddStock = ({ setModalVisible, data, toast }: IAddStock) => {
   const [stockValue, setStockValue] = useState<string | null>("0");
   const [priceValue, setPriceValue] = useState<number | null>(null);
   const [newQuantity, setNewQuantity] = useState<string | null>(null);
+
+  const { height, width } = useWindowDimensions();
 
   useEffect(() => {
     const nQ = Number(
@@ -39,37 +42,46 @@ const AddStock = ({ setModalVisible, data, toast }: IAddStock) => {
   return (
     <>
       <div className={styles.modalContent}>
-        <div className="grid">
-          <div className="col shadow-3 border-round-xl inline p-4 font-bold">
+        <div className="flex flex-row">
+          <div className="flex w-6 justify-content-center align-content-center shadow-3 border-round-xl inline p-4 font-bold">
             {data.productName}
           </div>
-          <div className="col shadow-3 border-round-xl inline p-4 ml-5">
-            <span className="font-semibold">Cantitate curenta: </span>
-            <span className="font-italic text-3xl">
+          <div className="flex w-6 justify-content-center align-content-center shadow-3 border-round-xl inline p-4 ml-5">
+            <span className="font-semibold w-16rem">Cantitate curenta: </span>
+            <span className="font-italic text-3xl ml-2">
               {Number(data.productQuantity).toFixed(2)}
             </span>
           </div>
         </div>
-        <div className="grid mt-5 shadow-3 p-4 border-round-xl">
-          <InputNumber
-            className={`${styles.addStockQuantity}`}
-            value={parseFloat(stockValue || "")}
-            onValueChange={(e) => setStockValue(Number(e.value).toFixed(2))}
-            min={0}
-            showButtons
-            buttonLayout="horizontal"
-            decrementButtonClassName="p-button-danger"
-            incrementButtonClassName="p-button-success"
-            incrementButtonIcon="pi pi-plus"
-            decrementButtonIcon="pi pi-minus"
-          />
-          <span className="font-semibold ml-8 mt-3">Cantitate noua: </span>
-          <span className={`${styles.newQuantity} font-italic ml-2 text-3xl`}>
-            {newQuantity}
-          </span>
+        <div className="mt-5 shadow-3 p-4 border-round-xl w-full">
+          <div className={width > 715 ? "flex flex-row" : "flex flex-column"}>
+            <InputNumber
+              className={`${styles.addStockQuantity} flex`}
+              value={parseFloat(stockValue || "")}
+              onValueChange={(e) => setStockValue(Number(e.value).toFixed(2))}
+              min={0}
+              showButtons
+              buttonLayout="horizontal"
+              decrementButtonClassName="p-button-danger"
+              incrementButtonClassName="p-button-success"
+              incrementButtonIcon="pi pi-plus"
+              decrementButtonIcon="pi pi-minus"
+            />
+
+            <span
+              className={`${styles.newQuantity} flex justify-content-center align-content-center font-semibold mt-3`}
+            >
+              Cantitate noua:{" "}
+              <span className={`flex font-normal font-italic ml-2 text-3xl`}>
+                {newQuantity}
+              </span>
+            </span>
+          </div>
         </div>
-        <div className="grid mt-5">
-          <div className="col-6 shadow-3 p-3 border-round-xl">
+        <div className="mt-5">
+          <div
+            className={`${styles.priceContainer} shadow-3 p-3 border-round-xl`}
+          >
             <span className={`${styles.priceLabel} font-semibold`}>Pret: </span>
             <InputNumber
               value={priceValue}

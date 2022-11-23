@@ -17,6 +17,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import RemoveStock from "../components/RemoveStock/RemoveStock";
 import toastOptions from "../utils/toastOptions";
+import useWindowDimensions from "../utils/getWindowDimensions";
 
 const Stocks = () => {
   const [stockItems, setStockItems] = useState<IStock[]>([]);
@@ -35,6 +36,8 @@ const Stocks = () => {
     page: 1,
     filters,
   });
+
+  const { height, width } = useWindowDimensions();
 
   useEffect(() => {
     loadLazyData();
@@ -208,35 +211,79 @@ const Stocks = () => {
     );
   };
 
-  const renderHeader = () => {
+  const TableHeaderAddButton = (props: any) => {
     return (
-      <div className="flex justify-content-between">
-        <Button
-          type="button"
-          icon="pi pi-plus"
-          label="Adaugare produs"
-          className="p-button-outlined"
-          onClick={addProduct}
-        />
-        <div>
-          <Button
-            type="button"
-            icon="pi pi-filter-slash"
-            label="Resetare filtre"
-            className="p-button-outlined mr-3"
-            onClick={clearGlobalFilter}
-          />
-          <span className="p-input-icon-left">
-            <i className="pi pi-search" />
-            <InputText
-              value={globalFilter}
-              onChange={onGlobalFilterChange}
-              placeholder="Cautare globala"
-            />
-          </span>
-        </div>
-      </div>
+      <Button
+        type="button"
+        icon="pi pi-plus"
+        label="Adaugare produs"
+        className={`p-button-outlined ${
+          props.isBreakpoint ? styles.smallBreakpoint : ""
+        }`}
+        onClick={addProduct}
+      />
     );
+  };
+
+  const TableHeaderResetButton = (props: any) => {
+    return (
+      <Button
+        type="button"
+        icon="pi pi-filter-slash"
+        label="Resetare filtre"
+        className={`p-button-outlined ${
+          props.isBreakpoint ? styles.smallBreakpoint : "mr-3"
+        }`}
+        onClick={clearGlobalFilter}
+      />
+    );
+  };
+
+  const TableHeaderGlobalSearch = (props: any) => {
+    return (
+      <span
+        className={`p-input-icon-left ${
+          props.isBreakpoint ? styles.smallBreakpoint : ""
+        }`}
+      >
+        <i className="pi pi-search" />
+        <InputText
+          value={globalFilter}
+          onChange={onGlobalFilterChange}
+          placeholder="Cautare globala"
+          className={`${props.isBreakpoint ? styles.smallBreakpoint : ""}`}
+        />
+      </span>
+    );
+  };
+
+  const renderHeader = () => {
+    if (width > 716) {
+      return (
+        <div className="flex justify-content-between">
+          <TableHeaderAddButton isBreakpoint={false} />
+          <div className="flex">
+            <TableHeaderResetButton isBreakpoint={false} />
+            <TableHeaderGlobalSearch isBreakpoint={false} />
+          </div>
+        </div>
+      );
+    } else {
+      const className = "w-max";
+      return (
+        <div className="flex flex-column">
+          <div className="flex align-items-center justify-content-center">
+            <TableHeaderAddButton isBreakpoint={true} />
+          </div>
+          <div className="flex align-items-center justify-content-center mt-2">
+            <TableHeaderResetButton isBreakpoint={true} />
+          </div>
+          <div className="flex align-items-center justify-content-center mt-2">
+            <TableHeaderGlobalSearch isBreakpoint={true} />
+          </div>
+        </div>
+      );
+    }
   };
 
   const header = renderHeader();

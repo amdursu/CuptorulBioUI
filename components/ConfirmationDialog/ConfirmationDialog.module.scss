@@ -1,8 +1,8 @@
 @import "../../styles/variables.scss";
 
 .modalContent {
-  height: 6rem;
-  width: 60rem;
+  min-height: 6rem;
+  max-width: 60rem;
   padding: 2rem;
   font-size: $normal-font-size;
   text-align: center;

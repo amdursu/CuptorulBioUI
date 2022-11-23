@@ -1,7 +1,8 @@
 @import "../../styles/variables.scss";
+@import "../../styles/breakpoints.scss";
 
 .modalContent {
-  height: 40vh;
+  min-height: 25rem;
   padding: 2rem;
   font-size: $normal-font-size;
   text-align: center;
@@ -17,21 +18,23 @@
   }
 }
 
-.newQuantity {
-  margin-top: 0.9rem;
-  width: 5rem;
+.priceContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  width: 100%;
 }
 
 .priceLabel {
-  margin-top: 0.8rem;
-  margin-right: 1rem;
+  margin: 0 1rem;
 }
 
 .priceInput {
   :global {
     .p-inputtext {
       font-size: $normal-font-size;
-      width: 14rem;
+      // max-width: 68%;
     }
   }
 }
@@ -50,6 +53,30 @@
 
     .p-button:last-child {
       margin-left: 1.2rem;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .newQuantity {
+    margin-left: 3rem;
+  }
+}
+
+@media (max-width: 530px) {
+  .priceContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .priceInput {
+    :global {
+      .p-inputtext {
+        max-width: 100%;
+      }
     }
   }
 }

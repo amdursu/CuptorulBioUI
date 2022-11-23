@@ -1,8 +1,9 @@
 @import "../../styles/variables.scss";
+@import "../../styles/breakpoints.scss";
 
 .modalContent {
-  height: 40vh;
-  width: 40rem;
+  min-height: 20rem;
+  max-width: 40rem;
   padding: 2rem;
   font-size: $normal-font-size;
   text-align: center;
@@ -19,8 +20,13 @@
   :global {
     .p-inputtext {
       font-size: $normal-font-size;
+      max-width: 20rem;
     }
   }
+}
+
+.inputCard input {
+  max-width: 20rem;
 }
 
 .inputCard {
@@ -46,5 +52,20 @@
     .p-button:last-child {
       margin-left: 1.2rem;
     }
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .productInput {
+    :global {
+      .p-inputtext {
+        font-size: $normal-font-size;
+        max-width: 16rem;
+      }
+    }
+  }
+
+  .inputCard input {
+    max-width: 16rem;
   }
 }
