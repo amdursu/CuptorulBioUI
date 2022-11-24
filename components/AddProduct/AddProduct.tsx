@@ -43,7 +43,7 @@ const AddProduct = ({ setModalVisible, newRow, toast }: IAddProduct) => {
   };
 
   return (
-    <>
+    <div>
       <div className={styles.modalContent}>
         <div
           className={`${styles.inputCard} flex shadow-3 p-3 border-round-xl`}
@@ -117,7 +117,7 @@ const AddProduct = ({ setModalVisible, newRow, toast }: IAddProduct) => {
         />
         <Button label="Renunta" className="p-button-danger" onClick={cancel} />
       </div>
-    </>
+    </div>
   );
 };
 

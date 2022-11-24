@@ -50,9 +50,13 @@
 .modalFooter {
   border-top: 1px solid lightgray;
   padding-top: 2rem;
-  margin-bottom: 2rem;
+  padding-bottom: 2rem;
   font-size: $normal-font-size;
   text-align: center;
+  background-color: white;
+  opacity: 1;
+  position: sticky;
+  bottom: 0;
 
   :global {
     .p-button {

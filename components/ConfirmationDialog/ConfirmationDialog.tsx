@@ -22,7 +22,7 @@ const ConfirmationDialog = ({
   };
 
   return (
-    <>
+    <div>
       <div className={styles.modalContent}>{confirmationComponent}</div>
       <div className={styles.modalFooter}>
         <Button
@@ -32,7 +32,7 @@ const ConfirmationDialog = ({
         />
         <Button label="Nu" className="p-button-danger" onClick={cancel} />
       </div>
-    </>
+    </div>
   );
 };
 

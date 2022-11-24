@@ -40,7 +40,7 @@ const AddStock = ({ setModalVisible, data, toast }: IAddStock) => {
   };
 
   return (
-    <>
+    <div className={styles.modalContainer}>
       <div className={styles.modalContent}>
         <div className="flex flex-row">
           <div className="flex w-6 justify-content-center align-content-center shadow-3 border-round-xl inline p-4 font-bold">
@@ -98,7 +98,7 @@ const AddStock = ({ setModalVisible, data, toast }: IAddStock) => {
         <Button label="Salveaza" className="p-button-info" onClick={addStock} />
         <Button label="Renunta" className="p-button-danger" onClick={cancel} />
       </div>
-    </>
+    </div>
   );
 };
 

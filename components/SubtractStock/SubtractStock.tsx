@@ -36,7 +36,7 @@ const SubtractStock = ({ setModalVisible, data, toast }: ISubtractStock) => {
   };
 
   return (
-    <>
+    <div>
       <div className={styles.modalContent}>
         <div className="flex flex-row">
           <div className="flex w-6 justify-content-center align-content-center shadow-3 border-round-xl inline p-4 font-bold">
@@ -85,7 +85,7 @@ const SubtractStock = ({ setModalVisible, data, toast }: ISubtractStock) => {
         />
         <Button label="Renunta" className="p-button-danger" onClick={cancel} />
       </div>
-    </>
+    </div>
   );
 };
 
